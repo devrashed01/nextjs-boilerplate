@@ -1,7 +1,9 @@
-import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import type { Metadata } from "next";
 
-import { ConfigProvider } from 'antd';
+import StyledComponentsRegistry from "@/lib/registry";
+import { themeConfig } from "@/theme/theme.config";
+import { ConfigProvider } from "antd";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -26,23 +28,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AntdRegistry>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: '#1890ff',
-            },
-          }}
-        >
-          {children}
+          <ConfigProvider theme={themeConfig}>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
           </ConfigProvider>
-          </AntdRegistry>
+        </AntdRegistry>
       </body>
     </html>
   );

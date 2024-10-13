@@ -16,7 +16,7 @@ export default function page() {
       </Title>
       <Input name="username" placeholder="Username" />
       <Input name="email" placeholder="Email" />
-      <Button>Login button</Button>
+      <Button type="primary">Login button</Button>
     </Form>
   );
 }

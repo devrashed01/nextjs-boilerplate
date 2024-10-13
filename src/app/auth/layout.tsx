@@ -1,3 +1,4 @@
+import AuthLayoutWrapper from "@/components/layouts/AuthLayout";
 import { Button, Card } from "antd";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -13,9 +14,11 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-        <Card>{children}</Card>
-        <Button><Link href="/">Go back home</Link></Button>
-    </div>
+    <AuthLayoutWrapper>
+      <Card>{children}</Card>
+      <Button>
+        <Link href="/">Go back home</Link>
+      </Button>
+    </AuthLayoutWrapper>
   );
 }
