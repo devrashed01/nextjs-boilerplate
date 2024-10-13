@@ -1,7 +1,6 @@
 import AuthLayoutWrapper from "@/components/layouts/AuthLayout";
-import { Button, Card } from "antd";
+import { Card } from "antd";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "BMH | Login",
@@ -16,9 +15,6 @@ export default function AuthLayout({
   return (
     <AuthLayoutWrapper>
       <Card>{children}</Card>
-      <Button>
-        <Link href="/">Go back home</Link>
-      </Button>
     </AuthLayoutWrapper>
   );
 }
